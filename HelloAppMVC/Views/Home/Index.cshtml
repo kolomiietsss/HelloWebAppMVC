@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    @if (ViewBag.Message != null) 
+    {
+        <h1>Здарова, @ViewBag.Message!</h1>
+    }
+    else
+    {
+        <h1>Представся спочатку, а потім входь в хату</h1>
+    }
+    <h2>Введіть своє ім'я:</h2>
+    <form> 
+        <input class="form-control" type="text" name="name" /><br>
+         <button class="btn btn-primary" type="submit" formaction="@Url.Action("SayHelloViewBag", "Home")" formmethod="post">Hello with ViewBag</button>
+         <button class="btn btn-secondary" type="submit" formaction="@Url.Action("SayHelloContent", "Home")" formmethod="post">Hello with Content</button>
+         <button class="btn btn-danger" type="submit" formaction="@Url.Action("SayHelloView", "Home")" formmethod="post">Hello with new View</button>
+
+    </form>
+</div>
